@@ -47,19 +47,32 @@ export default function Contact() {
     e.preventDefault();
     setFormState("loading");
 
-    // TODO: Connect to Google Apps Script Webhook
-    // Example:
-    // const GAS_WEBHOOK_URL = "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec";
-    // await fetch(GAS_WEBHOOK_URL, {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(form),
-    // });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "bf22d999-9e53-43aa-b6e4-d910c8af5a37",
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          subject: `Pesan Baru dari Portofolio - ${form.name}`,
+        }),
+      });
 
-    // Simulate network delay for demo purposes — remove when integrating webhook
-    await new Promise((res) => setTimeout(res, 1500));
-    setFormState("success");
-    setForm({ name: "", email: "", message: "" });
+      const result = await response.json();
+      if (result.success) {
+        setFormState("success");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setFormState("error");
+      }
+    } catch (error) {
+      setFormState("error");
+    }
   };
 
   const inputClass =
@@ -187,7 +200,7 @@ export default function Contact() {
                     value={form.name}
                     onChange={handleChange}
                     required
-                    placeholder="John Doe"
+                    placeholder="Joni"
                     className={inputClass}
                     aria-required="true"
                   />
@@ -203,7 +216,7 @@ export default function Contact() {
                     value={form.email}
                     onChange={handleChange}
                     required
-                    placeholder="john@example.com"
+                    placeholder="joni@example.com"
                     className={inputClass}
                     aria-required="true"
                   />
