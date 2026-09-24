@@ -7,21 +7,21 @@ import { Send, Linkedin, Github, Mail, CheckCircle, AlertCircle, Loader2 } from 
 const socialLinks = [
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/muhzubair",
+    href: "https://www.linkedin.com/in/muh-zubair-4b1b01363",
     icon: Linkedin,
     color: "#0077B5",
     bg: "#0077B515",
   },
   {
     label: "GitHub",
-    href: "https://github.com/muhzubair",
+    href: "https://github.com/muhzubair-webdev",
     icon: Github,
     color: "#F1F5F9",
     bg: "#F1F5F915",
   },
   {
     label: "Email",
-    href: "mailto:email@domain.com",
+    href: "mailto:muh.zubair.id@gmail.com",
     icon: Mail,
     color: "#F97316",
     bg: "#F9731615",
@@ -125,9 +125,9 @@ export default function Contact() {
                   <div>
                     <p className="text-[#F1F5F9] font-medium text-sm">{label}</p>
                     <p className="text-[#94A3B8] text-xs mt-0.5">
-                      {label === "LinkedIn" && "linkedin.com/in/muhzubair"}
-                      {label === "GitHub" && "github.com/muhzubair"}
-                      {label === "Email" && "email@domain.com"}
+                      {label === "LinkedIn" && "linkedin.com/in/muh-zubair-4b1b01363"}
+                      {label === "GitHub" && "github.com/muhzubair-webdev"}
+                      {label === "Email" && "muh.zubair.id@gmail.com"}
                     </p>
                   </div>
                   <span

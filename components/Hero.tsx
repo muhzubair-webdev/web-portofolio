@@ -135,12 +135,12 @@ export default function Hero() {
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
           className="order-1 md:order-2 flex justify-center"
         >
-          <div className="relative">
-            {/* Rotating ring */}
+          <div className="relative group cursor-pointer">
+            {/* Rotating ring - speeds up slightly on hover */}
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-0 rounded-full"
+              className="absolute inset-0 rounded-full group-hover:opacity-80 transition-opacity duration-500"
               style={{
                 background:
                   "conic-gradient(from 0deg, #7C3AED, #F97316, #7C3AED)",
@@ -151,27 +151,29 @@ export default function Hero() {
               <div className="w-full h-full rounded-full bg-[#0A0A0F]" />
             </motion.div>
 
-            {/* Avatar placeholder */}
+            {/* Profile Image Container */}
             <div
               className="relative w-56 h-56 sm:w-72 sm:h-72 rounded-full flex items-center justify-center overflow-hidden"
               style={{
                 background: "linear-gradient(135deg, #12121A 0%, #1E1B4B 50%, #12121A 100%)",
               }}
             >
-              {/* Initials fallback */}
-              <div className="text-center">
-                <div className="text-5xl sm:text-7xl font-bold bg-gradient-to-br from-[#7C3AED] to-[#F97316] bg-clip-text text-transparent select-none">
-                  MZ
-                </div>
-                <p className="text-xs text-[#94A3B8] mt-1">Foto Profil</p>
-              </div>
+              <motion.img 
+                src="/profile.png" 
+                alt="Muh Zubair" 
+                className="object-cover w-full h-full z-10 transition-transform duration-700 ease-out group-hover:scale-110"
+                style={{ filter: "brightness(0.9) contrast(1.1)" }}
+              />
 
-              {/* Inner glow */}
+              {/* Cyber theme tint overlay (fades on hover) */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#7C3AED]/30 to-[#F97316]/20 mix-blend-color z-15 transition-opacity duration-500 group-hover:opacity-0" />
+
+              {/* Inner glow overlay */}
               <div
-                className="absolute inset-0 rounded-full pointer-events-none"
+                className="absolute inset-0 rounded-full pointer-events-none z-20 transition-opacity duration-500 group-hover:opacity-50"
                 style={{
                   background:
-                    "radial-gradient(circle at 30% 30%, #7C3AED22, transparent 60%)",
+                    "radial-gradient(circle at 30% 30%, #7C3AED33, transparent 60%)",
                 }}
                 aria-hidden="true"
               />
