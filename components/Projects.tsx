@@ -22,7 +22,7 @@ const projects: Project[] = [
     tags: ["Google Apps Script", "AppSheet"],
     status: "Implementasi Birokrasi",
     statusColor: "#10B981",
-    github: "https://github.com/muhzubair",
+    github: "https://github.com/muhzubair-webdev",
     demo: undefined,
   },
   {
@@ -32,7 +32,7 @@ const projects: Project[] = [
     tags: ["Laravel 12", "MySQL", "Tailwind CSS"],
     status: "Pengembangan Aktif",
     statusColor: "#F97316",
-    github: "https://github.com/muhzubair",
+    github: "https://github.com/muhzubair-webdev",
     demo: undefined,
   },
   {
@@ -42,7 +42,7 @@ const projects: Project[] = [
     tags: ["Next.js", "React", "Tailwind CSS"],
     status: "Konsep Kompetisi",
     statusColor: "#7C3AED",
-    github: "https://github.com/muhzubair",
+    github: "https://github.com/muhzubair-webdev",
     demo: undefined,
   },
   {
@@ -52,7 +52,7 @@ const projects: Project[] = [
     tags: ["Laravel", "MySQL", "AES-256 Encryption"],
     status: "Proposal Sistem",
     statusColor: "#6366F1",
-    github: "https://github.com/muhzubair",
+    github: "https://github.com/muhzubair-webdev",
     demo: undefined,
   },
 ];
